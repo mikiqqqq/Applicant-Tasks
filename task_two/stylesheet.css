@@ -1,0 +1,199 @@
+body{
+  margin: 0 auto;
+  background-color: lavender;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 1960px;
+  margin: 0 auto;
+}
+
+.wrapper{
+  background-color: white;
+  width: 100%;
+}
+
+.container-text{
+  width: 100%;
+  text-align: center;
+}
+
+.container-text > h2{
+  margin: 0;
+  margin-top: 64px;
+}
+
+.container-text > p{
+  margin: 16px 32px;
+}
+
+h2, h3{
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h2{
+  font-size: 54px;
+}
+
+h3{
+  font-size: 36px;
+}
+
+p{
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.link-recipes{
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: solid 1px black;
+  transition: .3s;
+  color: black;
+}
+
+.link-recipes:hover{
+  color: red;
+  opacity: .5;
+  transition: .3s;
+}
+
+.container-card{
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-image{
+  position: relative;
+  z-index: 0;
+}
+
+.picture{
+  border-radius: 50%;
+  margin: 0 auto;
+  max-width: 360px;
+  transition: .5s;
+}
+
+.picture:hover{
+  transform: scale(1.1);
+  transition: .3s;
+}
+
+.card-desc{
+  margin: 32px 0;
+  max-width: 360px;
+}
+
+.graphic{
+  position: absolute;
+  z-index: -5;
+}
+
+#graphic-one{
+  transform: translate(-50%, -19%);
+}
+
+#graphic-two{
+  transform: translate(-39%, 125%);
+}
+
+#graphic-three{
+  transform: translate(79%, -18%);
+}
+
+#graphic-four{
+  transform: translate(79%, 125%);
+}
+
+@media screen and (max-width: 1400px) {
+  .picture, .card-desc{
+    width: 20vw;
+  }
+
+  .graphic{
+    width: 13vw;
+  }
+
+  .card-desc{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card-desc{
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container-card{
+    grid-template-columns: none;
+  }
+
+  .picture, .card-desc{
+    width: auto;
+  }
+
+  .graphic{
+    width: auto;
+  }
+
+  .card-desc{
+    font-size: 36px;
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container-card{
+    margin-top: 32px;
+  }
+
+  h2{
+    font-size: 36px;
+  }
+
+  p{
+    font-size: 20px;
+  }
+
+  .link-recipes{
+    font-size: 18px;
+  }
+
+  .card-desc{
+    font-size: 24px;
+  }
+
+  .picture, .card-desc{
+    width: 84%;
+  }
+
+  .graphic{
+    width: 50%;
+  }
+}

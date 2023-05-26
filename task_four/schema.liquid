@@ -1,0 +1,58 @@
+<div class="item-section">
+  {% for block in section.blocks %}
+    {% if block.type == 'item' %}
+      {% assign itemImage = block.settings.item_image %}
+      {% assign itemTitle = block.settings.item_title %}
+      {% assign itemDescription = block.settings.item_description %}
+
+      {% if itemImage and itemTitle and itemDescription %}
+        <div class="item">
+          <img src="{{ itemImage | img_url: 'small' }}" alt="Item Image">
+          <h3>{{ itemTitle }}</h3>
+          <p>{{ itemDescription }}</p>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Item Section",
+  "settings": [
+    {         
+      "type": "text",         
+      "label": "heading",
+      "id": "main_title"         
+    } 
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Item Image",
+          "id": "item_image_id"
+        },
+        {
+          "type": "text",
+          "label": "Item Title",
+          "id": "item_title_id"
+        },
+        {
+          "type": "textarea",
+          "label": "Item Description",
+          "id": "item_desc_id"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {       
+      "name": "Applicant Preset"
+    }   
+  ] 
+}
+{% endschema %}
